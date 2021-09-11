@@ -2,5 +2,5 @@
 // initialization of application   reads and fetches
 
 document.addEventListener("DOMContentLoaded", () => {
-  
+  Member.fetchMembers()
 });
