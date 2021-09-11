@@ -29,11 +29,9 @@ class Member {
           .then(data => {
             let mem = new Member(data.id, data.first, data.last, data.joined, data.left, data.image, data.characters)
             mem.renderMember()
-             memberFirstValue = ""
-             memberLastValue = ""
-             memberJoinedValue = ""
-             memberLeftValue = ""
-             memberImageValue = ""
+            
+            let clearMemberForm = document.getElementById("addMember")
+            clearMemberForm.reset()
              
           })
           .catch(error => {
