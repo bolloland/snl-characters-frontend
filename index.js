@@ -3,4 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   Member.fetchMembers()
+
+let addMemberForm = document.getElementById("addMember")
+addMemberForm.addEventListener("submit", Member.newMember)
 });
