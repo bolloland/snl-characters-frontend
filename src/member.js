@@ -63,11 +63,15 @@ class Member {
             if (r == true) {
             txt = "You pressed OK!";
             let memberID = parseInt(event.target.id)
-                console.log(event)
+                // console.log(event)
                 fetch(`${memberURL}/${memberID}`, {
                     method: "DELETE",
                 })
-                .then(resp => Member.fetchMembers())
+                .then(resp => {
+                    let actorsContainer = document.getElementById("actor-container")
+                    actorsContainer.innerHTML = ""
+                    Member.fetchMembers()
+                })
          
             } else {
             txt = "You pressed Cancel!";
@@ -75,7 +79,7 @@ class Member {
         }
         
         renderMember = () => {
-        console.log(this) // <an instance
+        // console.log(this) // <an instance
         let actorsContainer = document.getElementById("actor-container")
         let div = document.getElementById("div")
         actorsContainer.innerHTML += `<div><img class="memberImage" src=${this.image} /><div>
