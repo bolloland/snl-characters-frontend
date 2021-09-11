@@ -57,21 +57,22 @@ class Member {
         }
         
         static deleteMember = () => {
-            debugger
+    
             let txt;
             let r = confirm("You sure? This will delete this Player and ALL their characters!!");
             if (r == true) {
             txt = "You pressed OK!";
+            let memberID = parseInt(event.target.id)
+                console.log(event)
+                fetch(`${memberURL}/${memberID}`, {
+                    method: "DELETE",
+                })
+                .then(resp => Member.fetchMembers())
+         
             } else {
-                let memberID = parseInt(event.target.id)
-                 console.log(event)
-                 fetch(`${memberURL}/${memberID}`, {
-                     method: "DELETE",
-                 })
-                 .then(resp => Member.fetchMembers())
-             }
             txt = "You pressed Cancel!";
             }
+        }
         
         renderMember = () => {
         console.log(this) // <an instance
