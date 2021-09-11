@@ -56,14 +56,34 @@ class Member {
             
         }
         
+        static deleteMember = () => {
+            debugger
+            let txt;
+            let r = confirm("You sure? This will delete this Player and ALL their characters!!");
+            if (r == true) {
+            txt = "You pressed OK!";
+            } else {
+                let memberID = parseInt(event.target.id)
+                 console.log(event)
+                 fetch(`${memberURL}/${memberID}`, {
+                     method: "DELETE",
+                 })
+                 .then(resp => Member.fetchMembers())
+             }
+            txt = "You pressed Cancel!";
+            }
         
         renderMember = () => {
         console.log(this) // <an instance
         let actorsContainer = document.getElementById("actor-container")
         let div = document.getElementById("div")
-        actorsContainer.innerHTML += `<div><img class="memberImage" src=${this.image} /><div>${this.first} ${this.last}</div></div>`
+        actorsContainer.innerHTML += `<div><img class="memberImage" src=${this.image} /><div>
+        <button id=${this.id} type="button">edit</button>
+        <button id=${this.id} onclick="Member.deleteMember()" type="button" style="color: red">&#x2715</button>
+        </div><div>${this.first} ${this.last}</div></div>`
 
     }
+
 
     static fetchMembers = () => {
     fetch(memberURL)
