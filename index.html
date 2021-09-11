@@ -20,15 +20,16 @@
     </div>
 
     <div id="form-new-member">
-        <form class="add-member">
+        <form id="addMember" class="add-member">
             <h3>Add a Not-ready-for-Prime-Time-Player!</h3>
-    
+            <!-- make this a hidden field with a button to reveal -->
             <input
               type="text"
               name="first"
               value=""
               placeholder="Enter their first name.."
               class="input-text"
+              id="memberFirst"
             />
             <br />
             <input
@@ -37,6 +38,7 @@
               value=""
               placeholder="Enter their last name..."
               class="input-text"
+              id="memberLast"
             />
             <br />
             <input
@@ -45,6 +47,7 @@
               value=""
               placeholder="Year they joined..."
               class="input-text"
+              id="memberJoined"
             />
             <br />
             <input
@@ -53,19 +56,21 @@
               value=""
               placeholder="Year they left..."
               class="input-text"
+              id="memberLeft"
             />
             <br />
             <input
               type="text"
               name="image"
               value=""
-              placeholder="Include a pic!..."
+              placeholder="Include a picture URL!..."
               class="input-text"
+              id="memberImage"
             />
             <br />
             <input
               type="submit"
-              name="submit"
+              name="submitMember"
               value="Submit to 30 Rockefeller Plaza"
               class="submit"
             />
