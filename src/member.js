@@ -53,8 +53,24 @@ class Member {
             let member = {first: memberFirstValue, last: memberLastValue, joined: memberJoinedValue, left: memberLeftValue, image: memberImageValue}
             
             Member.postMember(member)
-            
         }
+
+        static editMember = () => {
+            let memberID = parseInt(event.target.id)
+            console.log(memberID)
+            fetch(`${memberURL}/${memberID}`)
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data)
+                document.querySelector("#addMember > h3").innerText = `EDIT ${data.first.uppercase} ${data.last.uppercase} INFO`
+                document.querySelector("#memberFirst").value = data.first
+                document.querySelector("#memberLast").value = data.last
+                document.querySelector("#memberJoined").value = data.joined
+                document.querySelector("#memberLeft").value = data.left
+                document.querySelector("#memberImage").value = data.image
+                
+                })
+            }
         
         static deleteMember = () => {
     
@@ -86,7 +102,7 @@ class Member {
             <img class="memberImage" src=${this.image} /><div>
             <div>${this.first} ${this.last}</div>
             <button id=${this.id} onclick="Member.showCharacters()" type="button">charcters</button>
-            <button id=${this.id} onclick="Member.editMember()" type="button">edit</button>
+            <button id=${this.id} class="edit-member" onclick="Member.editMember()" type="button">edit</button>
             <button id=${this.id} onclick="Member.deleteMember()" type="button" style="color: red">&#10060;</button>
             </div></div>`
 

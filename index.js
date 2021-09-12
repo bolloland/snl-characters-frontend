@@ -6,4 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let addMemberForm = document.getElementById("addMember")
 addMemberForm.addEventListener("submit", Member.newMember)
+
+
 });
