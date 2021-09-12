@@ -82,7 +82,7 @@ class Member {
         // console.log(this) // <an instance
         let actorsContainer = document.getElementById("actor-container")
         let div = document.getElementById("div")
-        actorsContainer.innerHTML += `<div><img class="memberImage" src=${this.image} /><div>
+        actorsContainer.innerHTML += `<div class="memberContainer"><img class="memberImage" src=${this.image} /><div>
         <button id=${this.id} type="button">edit</button>
         <button id=${this.id} onclick="Member.deleteMember()" type="button" style="color: red">&#x2715</button>
         </div><div>${this.first} ${this.last}</div></div>`
