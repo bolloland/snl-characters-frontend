@@ -14,4 +14,14 @@
     justify-content: center; 
     text-align: center;
     flex-wrap: wrap;
+    border-style: solid;
+    border-image: linear-gradient(45deg, rgb(17, 231, 210), rgb(0, 0, 0)) 1;
+    
 }
+
+.memberContainer {
+    border-style: solid;
+    border-image: linear-gradient(45deg, rgb(17, 231, 210), rgb(0, 0, 0)) 1;
+    margin: 5px;
+}
+
