@@ -7,5 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
 let addMemberForm = document.getElementById("addMember")
 addMemberForm.addEventListener("submit", Member.newMember)
 
-
-});
+let addMemeberButton = document.getElementById("showNewMemberForm")
+addMemeberButton.addEventListener("click", () => {
+// console.log("clicked!")
+document.getElementById("form-new-member").hidden = false
+}
+)})

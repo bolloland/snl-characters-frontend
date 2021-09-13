@@ -10,80 +10,82 @@
     ...it's Saturday Night!
     <div>
         <h3 class="title"></h3>
-        <img height="100" src="https://pbs.twimg.com/profile_images/1159903342182699009/VOkYedxH_400x400.jpg" alt="">
+        <img height="100" id="snlLogo" src="https://pbs.twimg.com/profile_images/1159903342182699009/VOkYedxH_400x400.jpg" alt="">
     </div>
 
     <div id="top5banner">
     </div>
 
-    <div class="full border" id="actor-container">
-    </div>
-
-    <div id="form-new-member">
+    
+    <div id="newMemberFormButton"><button id="showNewMemberForm">Add SNL Cast Member</button></div>
+    <div id="form-new-member" hidden>
         <form id="addMember" class="add-member">
             <h3>Add a Not-ready-for-Prime-Time-Player!</h3>
             <!-- make this a hidden field with a button to reveal -->
             <input
-              type="text"
-              name="first"
-              value=""
-              placeholder="Enter their first name.."
-              class="input-text"
-              id="memberFirst"
+            type="text"
+            name="first"
+            value=""
+            placeholder="Enter their first name.."
+            class="input-text"
+            id="memberFirst"
             />
             <br />
             <input
-              type="text"
-              name="last"
-              value=""
-              placeholder="Enter their last name..."
-              class="input-text"
-              id="memberLast"
+            type="text"
+            name="last"
+            value=""
+            placeholder="Enter their last name..."
+            class="input-text"
+            id="memberLast"
             />
             <br />
             <input
-              type="text"
-              name="joined"
-              value=""
-              placeholder="Year they joined..."
-              class="input-text"
-              id="memberJoined"
+            type="text"
+            name="joined"
+            value=""
+            placeholder="Year they joined..."
+            class="input-text"
+            id="memberJoined"
             />
             <br />
             <input
-              type="text"
-              name="left"
-              value=""
-              placeholder="Year they left..."
-              class="input-text"
-              id="memberLeft"
+            type="text"
+            name="left"
+            value=""
+            placeholder="Year they left..."
+            class="input-text"
+            id="memberLeft"
             />
             <br />
             <input
-              type="text"
-              name="image"
-              value=""
-              placeholder="Include a picture URL!..."
-              class="input-text"
-              id="memberImage"
+            type="text"
+            name="image"
+            value=""
+            placeholder="Include a picture URL!..."
+            class="input-text"
+            id="memberImage"
             />
             <br />
             <input
-              type="submit"
-              name="submitMember"
-              value="Submit to 30 Rockefeller Plaza"
-              class="submit"
+            type="submit"
+            name="submitMember"
+            value="Submit to 30 Rockefeller Plaza"
+            class="submit"
             />
-          </form>
+        </form>
+    </div>
+    
+    <div class="full border" id="actor-container">
     </div>
 
     <div id="character-container">
     </div>
-
+    
     <div id="form-new-character">
     </div>
-
-
+    
+    
     <script src = "src/character.js"></script>
     <script src = "src/characterService.js"></script>
     <script src = "src/member.js"></script>
