@@ -74,6 +74,10 @@ class Member {
                 document.querySelector("#memberImage").value = data.image
                 })
             }
+
+        static patchUpdatedMember = () => {
+            console.log("PatchY!")
+        }    
         
         static deleteMember = () => {
     
