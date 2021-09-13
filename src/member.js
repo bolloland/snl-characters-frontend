@@ -42,7 +42,7 @@ class Member {
         
         static newMember = (e) => {
             e.preventDefault()
-            console.log("aroo?")
+            console.log("submitted new member!")
             
             let memberFirstValue = document.getElementById("memberFirst").value
             let memberLastValue = document.getElementById("memberLast").value
@@ -51,18 +51,20 @@ class Member {
             let memberImageValue = document.getElementById("memberImage").value
             
             let member = {first: memberFirstValue, last: memberLastValue, joined: memberJoinedValue, left: memberLeftValue, image: memberImageValue}
-            
+            document.getElementById("form-new-member").hidden = true
             Member.postMember(member)
         }
 
         static editMember = () => {
             let memberID = parseInt(event.target.id)
             console.log(memberID)
+            document.getElementById("form-new-member").hidden = false
+            document.getElementById("submitNewMemberButton").hidden = true
             fetch(`${memberURL}/${memberID}`)
             .then(resp => resp.json())
             .then(data => {
                 console.log(data)
-                document.querySelector("#addMember > h3").innerText = `EDIT ${data.first.uppercase} ${data.last.uppercase} INFO`
+                document.querySelector("#addMember > h3").innerText = `Edit info for: ${data.first} ${data.last}`
                 document.querySelector("#memberFirst").value = data.first
                 document.querySelector("#memberLast").value = data.last
                 document.querySelector("#memberJoined").value = data.joined
