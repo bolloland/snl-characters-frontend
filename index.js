@@ -11,5 +11,10 @@ let addMemberButton = document.getElementById("showNewMemberForm")
 addMemberButton.addEventListener("click", () => {
 // console.log("clicked!")
 document.getElementById("form-new-member").hidden = false
+
+let cancelNewMember = document.querySelector("#cancelNew")
+cancelNewMember.addEventListener("click", () => {
+    document.querySelector("#form-new-member").hidden = true
+})
 }
 )})
