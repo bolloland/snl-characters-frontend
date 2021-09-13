@@ -60,6 +60,8 @@ class Member {
             console.log(memberID)
             document.getElementById("form-new-member").hidden = false
             document.getElementById("submitNewMemberButton").hidden = true
+            document.getElementById("submitUpdateButton").hidden = false
+            document.querySelector("#showNewMemberForm").hidden = true
             fetch(`${memberURL}/${memberID}`)
             .then(resp => resp.json())
             .then(data => {
@@ -70,7 +72,6 @@ class Member {
                 document.querySelector("#memberJoined").value = data.joined
                 document.querySelector("#memberLeft").value = data.left
                 document.querySelector("#memberImage").value = data.image
-                
                 })
             }
         
