@@ -75,13 +75,9 @@
             id="submitNewMemberButton"
             />
             <br />
-            <!-- <button id="submitUpdateButton" hidden>
-                Submit Updates
-            </button> -->
-            <br />
-            <button id="cancelButton" data-id="newMemberCancelButton">
-                Cancel
-            </button>
+            <div><button id="cancelButton" onclick="Member.cancelNewForm()" type="button">
+             Cancel </button></div>
+            
             
         </form>
     </div>
@@ -96,7 +92,7 @@
             value=""
             placeholder="Enter their last name..."
             class="input-text"
-            id="memberFirst"
+            id="editMemberFirst"
             />
             <br />
             <input
@@ -143,17 +139,13 @@
             id="submitEditMemberButton"
             />
             <br />
-            <!-- <button id="submitUpdateButton" hidden>
-                Submit Updates
-            </button> -->
             <br />
-            <button id="cancelButton">
+            <button id="cancelEditButton">
                 Cancel
             </button>
-            
         </form>
     </div>
-    
+    <!-- ^^^EDIT MEMBER FIELDS ^^^ -->
     <div class="full border" id="actor-container">
     </div>
 

@@ -39,6 +39,11 @@ class Member {
               document.body.innerHTML = error.message;
             })
         }
+
+        static cancelNewForm = () => {
+            console.log("cancellll??!")
+            document.querySelector("#form-new-member").hidden = true
+        }
         
         static newMember = (e) => {
             e.preventDefault()
@@ -61,11 +66,12 @@ class Member {
             document.getElementById("form-edit-member").hidden = false
             // document.getElementById("submitNewMemberButton").hidden = true
             // document.getElementById("submitUpdateButton").hidden = false
-            document.querySelector("#showNewMemberForm").hidden = true
+            // document.querySelector("#showNewMemberForm").hidden = true
             fetch(`${memberURL}/${memberID}`)
             .then(resp => resp.json())
             .then(data => {
                 console.log(data)
+                
                 document.querySelector("#editMember > h3").innerText = `Edit info for: ${data.first} ${data.last}`
                 document.querySelector("#editMemberFirst").value = data.first
                 document.querySelector("#editMemberLast").value = data.last
@@ -76,6 +82,7 @@ class Member {
             }
 
         static patchUpdatedMember = () => {
+            e.preventDefault()
             console.log("PatchY!")
         }    
         
