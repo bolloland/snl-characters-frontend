@@ -1,3 +1,4 @@
+
 const memberURL = "http://localhost:3000/members"
 
 class Member {
@@ -24,7 +25,6 @@ class Member {
             },
             body: JSON.stringify(member)
           })
-          
           .then(resp => resp.json())
           .then(data => {
             let mem = new Member(data.id, data.first, data.last, data.joined, data.left, data.image, data.characters)
@@ -81,6 +81,9 @@ class Member {
                 })
             }
 
+        static patchMemberEdits = () => {
+            console.log("about to patch")
+        }
 
         
         static deleteMember = () => {
