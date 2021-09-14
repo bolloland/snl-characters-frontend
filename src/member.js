@@ -81,10 +81,7 @@ class Member {
                 })
             }
 
-        static patchUpdatedMember = () => {
-            e.preventDefault()
-            console.log("PatchY!")
-        }    
+
         
         static deleteMember = () => {
     
