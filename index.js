@@ -10,6 +10,6 @@ addMemberForm.addEventListener("submit", Member.newMember)
 let addMemberButton = document.getElementById("showNewMemberForm")
 addMemberButton.addEventListener("click", () => {
 document.getElementById("form-new-member").hidden = false
+})
 
-}
-)})
+})
