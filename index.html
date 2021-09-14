@@ -79,13 +79,13 @@
                 Submit Updates
             </button> -->
             <br />
-            <button id="cancelButton">
+            <button id="cancelButton" data-id="newMemberCancelButton">
                 Cancel
             </button>
             
         </form>
     </div>
-    ////EDIT MEMBER 
+               <!-- EDIT MEMBER  -->
     <div id="form-edit-member" hidden>
         <form id="editMember" class="edit-member">
             <h3></h3>
@@ -94,7 +94,7 @@
             type="text"
             name="first"
             value=""
-            placeholder="Enter their first name.."
+            placeholder="Enter their last name..."
             class="input-text"
             id="memberFirst"
             />
@@ -105,7 +105,7 @@
             value=""
             placeholder="Enter their last name..."
             class="input-text"
-            id="memberLast"
+            id="editMemberLast"
             />
             <br />
             <input
@@ -114,7 +114,7 @@
             value=""
             placeholder="Year they joined..."
             class="input-text"
-            id="memberJoined"
+            id="editMemberJoined"
             />
             <br />
             <input
@@ -123,7 +123,7 @@
             value=""
             placeholder="Year they left..."
             class="input-text"
-            id="memberLeft"
+            id="editMemberLeft"
             />
             <br />
             <input
@@ -132,7 +132,7 @@
             value=""
             placeholder="Include a picture URL!..."
             class="input-text"
-            id="memberImage"
+            id="editMemberImage"
             />
             <br />
             <input
@@ -143,9 +143,9 @@
             id="submitEditMemberButton"
             />
             <br />
-            <button id="submitUpdateButton" hidden>
+            <!-- <button id="submitUpdateButton" hidden>
                 Submit Updates
-            </button>
+            </button> -->
             <br />
             <button id="cancelButton">
                 Cancel

@@ -59,19 +59,19 @@ class Member {
             let memberID = parseInt(event.target.id)
             console.log(memberID)
             document.getElementById("form-edit-member").hidden = false
-            document.getElementById("submitNewMemberButton").hidden = true
-            document.getElementById("submitUpdateButton").hidden = false
+            // document.getElementById("submitNewMemberButton").hidden = true
+            // document.getElementById("submitUpdateButton").hidden = false
             document.querySelector("#showNewMemberForm").hidden = true
             fetch(`${memberURL}/${memberID}`)
             .then(resp => resp.json())
             .then(data => {
                 console.log(data)
                 document.querySelector("#editMember > h3").innerText = `Edit info for: ${data.first} ${data.last}`
-                document.querySelector("#memberFirst").value = data.first
-                document.querySelector("#memberLast").value = data.last
-                document.querySelector("#memberJoined").value = data.joined
-                document.querySelector("#memberLeft").value = data.left
-                document.querySelector("#memberImage").value = data.image
+                document.querySelector("#editMemberFirst").value = data.first
+                document.querySelector("#editMemberLast").value = data.last
+                document.querySelector("#editMemberJoined").value = data.joined
+                document.querySelector("#editMemberLeft").value = data.left
+                document.querySelector("#editMemberImage").value = data.image
                 })
             }
 
