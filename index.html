@@ -78,7 +78,6 @@
             <div><button id="cancelButton" onclick="Member.cancelNewForm()" type="button">
              Cancel </button></div>
             
-            
         </form>
     </div>
                <!-- EDIT/PATCH MEMBER  -->
@@ -131,19 +130,15 @@
             id="editMemberImage"
             />
             <br />
-            <!-- <button id="submitEdits">Submit Your Edits to Lorne!</button> -->
-            <input
-            type="submit"
-            name="editMember"
-            value="Submit Your Edits to Lorne!"
-            class="submit"
-            id="editMemberSubmitButton"
-            />
+            <div>
+               <button id="patchMemberEdits" onclick="Member.patchMemberEdits()">Send The Edits to Lorne!</button>
+            </div>
             <br />
-            <br />
-            <button id="cancelEditButton">
-                Cancel
-            </button>
+            <div>
+                <button id="cancelEditButton">
+                    Cancel
+                </button>
+            </div>
         </form>
     </div>
     <!-- ^^^EDIT MEMBER FIELDS ^^^ -->

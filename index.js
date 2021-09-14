@@ -12,4 +12,7 @@ addMemberButton.addEventListener("click", () => {
 document.getElementById("form-new-member").hidden = false
 })
 
+
+
+
 })
