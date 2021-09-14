@@ -12,7 +12,7 @@ addMemberButton.addEventListener("click", () => {
 document.getElementById("form-new-member").hidden = false
 })
 
-
-
-
+let submitEdits = document.getElementById("form-edit-member")
+submitEdits.addEventListener("submit", Member.patchMemberEdits)
 })
+
