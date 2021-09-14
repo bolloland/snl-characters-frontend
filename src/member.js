@@ -81,7 +81,8 @@ class Member {
                 })
             }
 
-        static patchMemberEdits = () => {
+        static patchMemberEdits = (e) => {
+            e.preventDefault()
             console.log("about to patch")
         }
 
@@ -115,7 +116,7 @@ class Member {
         actorsContainer.innerHTML += `<div class="memberContainer">
             <img class="memberImage" src=${this.image} /><div>
             <div>${this.first} ${this.last}</div>
-            <button id=${this.id} onclick="Member.showCharacters()" type="button">charcters</button>
+            <button id=${this.id} onclick="Member.showCharacters()" type="button">characters</button>
             <button id=${this.id} class="edit-member" onclick="Member.editMember()" type="button">edit</button>
             <button id=${this.id} onclick="Member.deleteMember()" type="button" style="color: red">&#10060;</button>
             </div></div>`
