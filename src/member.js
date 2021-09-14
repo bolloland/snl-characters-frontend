@@ -58,7 +58,7 @@ class Member {
         static editMember = () => {
             let memberID = parseInt(event.target.id)
             console.log(memberID)
-            document.getElementById("form-new-member").hidden = false
+            document.getElementById("form-edit-member").hidden = false
             document.getElementById("submitNewMemberButton").hidden = true
             document.getElementById("submitUpdateButton").hidden = false
             document.querySelector("#showNewMemberForm").hidden = true
@@ -66,7 +66,7 @@ class Member {
             .then(resp => resp.json())
             .then(data => {
                 console.log(data)
-                document.querySelector("#addMember > h3").innerText = `Edit info for: ${data.first} ${data.last}`
+                document.querySelector("#editMember > h3").innerText = `Edit info for: ${data.first} ${data.last}`
                 document.querySelector("#memberFirst").value = data.first
                 document.querySelector("#memberLast").value = data.last
                 document.querySelector("#memberJoined").value = data.joined
