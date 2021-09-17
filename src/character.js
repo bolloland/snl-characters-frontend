@@ -19,6 +19,8 @@ class Character {
     }
     
     
+    // document.querySelector("#actor-container").classList.toggle("hidden-member")
+    // document.querySelector("#character-container").classList.toggle("hidden")
  
     // renderMember = () => {
     //     // console.log(this) // <an instance
@@ -31,14 +33,24 @@ class Character {
     //         <button id=${this.id} class="edit-member" onclick="Member.editMember()" type="button">edit</button>
     //         <button id=${this.id} onclick="Member.deleteMember()" type="button" style="color: red">&#10060;</button>
     //         </div></div>`
-
     // }
 
     static fetchCharacters = (e) => {
-        console.log(e)
-        fetch(memberURL)
+        let charID = parseInt(e)
+        console.log(charID)
+        fetch(`${memberURL}/${charID}`)
         .then(resp => resp.json())
-        .then(json => console.log(json))
+        .then(json => {
+            console.log(json)
+            let chars = json["characters"]
+            chars.forEach(c => {
+                let char = new Character(c.id, c.name, c.debut, c.review, c.image, c.script_one, c.script_two, c.script_three, c.likes, c.member_id)
+                console.log(char)
+                char.renderCharacters()
+            })
+        })
+
+        
      
             // {
         //     json.forEach(player => {
