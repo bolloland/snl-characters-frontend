@@ -116,12 +116,13 @@ class Member {
         actorsContainer.innerHTML += `<div class="memberContainer">
             <img class="memberImage" src=${this.image} /><div>
             <div>${this.first} ${this.last}</div>
-            <button id=${this.id} onclick="Character.showCharacters()" type="button">characters</button>
+            <button id=${this.id} class="show-character" onclick="Character.fetchCharacters(${this.id})" type="button">characters</button>
             <button id=${this.id} class="edit-member" onclick="Member.editMember()" type="button">edit</button>
             <button id=${this.id} onclick="Member.deleteMember()" type="button" style="color: red">&#10060;</button>
             </div></div>`
 
     }
+    // <button id=${this.id} class="show-character" onclick="Character.showCharacters()" type="button">characters</button>
 
 
     static fetchMembers = () => {
