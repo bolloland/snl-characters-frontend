@@ -17,4 +17,25 @@ class Character {
         Character.all.push(this)
 
     }
+
+    static showCharacters = () => {
+        console.log("showing characters")
+        let charBlock = document.getElementById("character-container")
+        let actorsContainer = document.getElementById("actor-container")
+        charBlock.hidden = false
+        actorsContainer.hidden = true
+    }
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
