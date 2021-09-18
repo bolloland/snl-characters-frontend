@@ -42,8 +42,13 @@
      display: none
  }
 
- .memberContainer {
+ #charBox {
     border-style: solid;
     border-image: linear-gradient(45deg, rgb(17, 231, 210), rgb(0, 0, 0)) 1;
-    margin: 5px;
+    margin-bottom: 0px;
+}
+
+#char-image {
+    border-style: solid;
+    width: 400px
 }
