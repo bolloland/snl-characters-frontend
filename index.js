@@ -19,7 +19,4 @@ submitEdits.addEventListener("submit", Member.patchMemberEdits)
 
 
 
-
-
-
 })
