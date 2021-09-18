@@ -1,4 +1,4 @@
-
+let charURL = "http://localhost:3000/characters"
 
 class Character {
     
@@ -18,19 +18,28 @@ class Character {
         Character.all.push(this)
     }
     
-    static addLike = (id) => {
-       console.log(id)
     
 
-       fetch(`${memberURL}/${this.ID}`, {
-  method: 'PATCH',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(),
-})
-.then(resp => resp.json())
-.then(json => console.log(json))
+    static addLike = (charID) => {
+    //    console.log(charID)
+    let likedChar = Character.all.find(char => char.id == charID)
+    // console.log(likedChar.likes)
+    likedChar.likes += 1
+    // console.log(likedChar.likes)
+    let likeCounter = document.getElementById(charID)
+       fetch(`${charURL}/${charID}`, {
+        method: 'PATCH',
+            headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(likedChar),
+        })
+            .then(resp => resp.json())
+            .then(json => likeCounter.innerHTML = `${likedChar.likes} Likes`)
+    }
+
+    returnMain = () => {
+        console.log("yo")
     }
 
     
@@ -42,12 +51,13 @@ class Character {
         document.querySelector("#character-container").classList.toggle("hidden")
         let charBox = document.getElementById("charBox")
         let div = document.getElementById("div")
+        let goToMain = document.getElementById("returnToMain")
+        goToMain.innerHTML = `<button id="gotoMainPage" onclick="returnMain()">Return to Cast Members</button>`
         charBox.innerHTML += `<div class="char-image">
         <div>
         <h2>
         ${this.name}
-        <button id=${this.id} class="like-button" onclick="Character.addLike(${this.id})" type="button">Like</button>
-        <button id=${this.likes} class="like-count" type="button">${this.likes}</button>
+        <button id=${this.id} class="like-button" onclick="Character.addLike(${this.id})" type="button"> ${this.likes} Likes </button>
         </h2>
         <img class="charImage" src=${this.image} /><div>
         </div>`
