@@ -38,9 +38,6 @@ class Character {
             .then(json => likeCounter.innerHTML = `${likedChar.likes} Likes`)
     }
 
-    returnMain = () => {
-        console.log("yo")
-    }
 
     
     renderCharacters = (creator) => {
@@ -52,7 +49,7 @@ class Character {
         let charBox = document.getElementById("charBox")
         let div = document.getElementById("div")
         let goToMain = document.getElementById("returnToMain")
-        goToMain.innerHTML = `<button id="gotoMainPage" onclick="returnMain()">Return to Cast Members</button>`
+        goToMain.innerHTML = `<button id="gotoMainPage"> Return to Cast Members </button>`
         charBox.innerHTML += `<div class="char-image">
         <div>
         <h2>
