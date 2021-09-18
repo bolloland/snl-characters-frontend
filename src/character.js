@@ -18,12 +18,23 @@ class Character {
         Character.all.push(this)
     }
     
-    getMemberName = () => {
-        console.log(this)
+    static addLike = (id) => {
+       console.log(id)
+    
+
+       fetch(`${memberURL}/${this.ID}`, {
+  method: 'PATCH',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(),
+})
+.then(resp => resp.json())
+.then(json => console.log(json))
     }
+
     
-    
-    renderCharacters = () => {
+    renderCharacters = (creator) => {
         console.log(this) 
         // let chars = this["characters"]
         // console.log(chars)
@@ -32,32 +43,30 @@ class Character {
         let charBox = document.getElementById("charBox")
         let div = document.getElementById("div")
         charBox.innerHTML += `<div class="char-image">
-            <img class="charImage" src=${this.image} /><div>
-            <div>${this.name}</div>
-            <button id=${this.id} class="like-button" onclick="Character.addLike()" type="button">Like</button>
-            </div></div>`
+        <div>
+        <h2>
+        ${this.name}
+        <button id=${this.id} class="like-button" onclick="Character.addLike(${this.id})" type="button">Like</button>
+        <button id=${this.likes} class="like-count" type="button">${this.likes}</button>
+        </h2>
+        <img class="charImage" src=${this.image} /><div>
+        </div>`
     }
 
     static fetchCharacters = (e) => {
-        let creator = Member.all.find(mem => mem.id = e)
-        debugger
-        creator.getMemberName()
+        let creator = Member.all.find(mem => mem.id == e)
+        // getMemberName(creator)
         document.querySelector("#character-container").classList.toggle("hidden")
         let charID = parseInt(e)
         // console.log(charID)
         fetch(`${memberURL}/${charID}`)
         .then(resp => resp.json())
-        .then(json => 
-        // { let memb = json
-        //     console.log(memb)
-        // })
-            {
-            // console.log(json)
+        .then(json => {
             let chars = json["characters"]
             chars.forEach(c => {
                 let char = new Character(c.id, c.name, c.debut, c.review, c.image, c.script_one, c.script_two, c.script_three, c.likes, c.member_id)
                 // console.log(char)
-                char.renderCharacters()
+                char.renderCharacters(creator)
             })
         })
     }
