@@ -15,9 +15,8 @@ document.getElementById("form-new-member").hidden = false
 let submitEdits = document.getElementById("form-edit-member")
 submitEdits.addEventListener("submit", Member.patchMemberEdits)
 
-let returnButton = document.querySelector("#gotoMainPage")
-returnButton.addEventListener("click", console.log("yo"))
-
+let returnButton = document.getElementById("gotoMainPage")
+returnButton.addEventListener("click", () => console.log("yo"))
 
 
 })
