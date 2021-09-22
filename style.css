@@ -52,3 +52,6 @@
     border-style: solid;
     width: 300px
 }
+.new-member-button#newMemberFormButton {
+    display: none
+}

@@ -4,7 +4,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   
 Member.fetchMembers()
-
+document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
 let addMemberForm = document.getElementById("addMember")
 addMemberForm.addEventListener("submit", Member.newMember)
 
@@ -21,5 +21,6 @@ returnButton.addEventListener("click", () => {
 console.log("yo")
 document.querySelector("#character-container").classList.toggle("hidden")
 document.querySelector("#actor-container").classList.toggle("hidden-member")
+document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
 })
 })

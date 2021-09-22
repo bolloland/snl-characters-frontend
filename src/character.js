@@ -62,6 +62,7 @@ class Character {
     static fetchCharacters = (e) => {
         document.querySelector("#actor-container").classList.toggle("hidden-member")
         document.querySelector("#character-container").classList.toggle("hidden")
+        document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
         let creator = Member.all.find(mem => mem.id == e)
         // getMemberName(creator)
         let charID = parseInt(e)
