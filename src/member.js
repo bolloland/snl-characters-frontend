@@ -126,6 +126,7 @@ class Member {
 
 
     static fetchMembers = () => {
+    document.querySelector("#actor-container").classList.toggle("hidden-member")
     fetch(memberURL)
     .then(resp => resp.json())
     .then(json => {

@@ -42,10 +42,11 @@ class Character {
     
     renderCharacters = (creator) => {
         console.log(this) 
+       
         // let chars = this["characters"]
         // console.log(chars)
-        document.querySelector("#actor-container").innerHTML= ""
-        document.querySelector("#character-container").classList.toggle("hidden")
+        // document.querySelector("#actor-container").innerHTML= ""
+        // document.querySelector("#character-container").classList.toggle("hidden")
         let charBox = document.getElementById("charBox")
         let div = document.getElementById("div")
         charBox.innerHTML += `<div class="char-image">
@@ -57,11 +58,12 @@ class Character {
         <img class="charImage" src=${this.image} /><div>
         </div>`
     }
-
+    
     static fetchCharacters = (e) => {
+        document.querySelector("#actor-container").classList.toggle("hidden-member")
+        document.querySelector("#character-container").classList.toggle("hidden")
         let creator = Member.all.find(mem => mem.id == e)
         // getMemberName(creator)
-        document.querySelector("#character-container").classList.toggle("hidden")
         let charID = parseInt(e)
         // console.log(charID)
         fetch(`${memberURL}/${charID}`)

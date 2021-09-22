@@ -2,7 +2,8 @@
 // initialization of application   reads and fetches
 
 document.addEventListener("DOMContentLoaded", () => {
-  Member.fetchMembers()
+  
+Member.fetchMembers()
 
 let addMemberForm = document.getElementById("addMember")
 addMemberForm.addEventListener("submit", Member.newMember)
@@ -16,7 +17,9 @@ let submitEdits = document.getElementById("form-edit-member")
 submitEdits.addEventListener("submit", Member.patchMemberEdits)
 
 let returnButton = document.getElementById("gotoMainPage")
-returnButton.addEventListener("click", () => console.log("yo"))
-
-
+returnButton.addEventListener("click", () => {
+console.log("yo")
+document.querySelector("#character-container").classList.toggle("hidden")
+document.querySelector("#actor-container").classList.toggle("hidden-member")
+})
 })
