@@ -18,7 +18,25 @@ class Character {
         Character.all.push(this)
     }
     
-    
+    // static newCharacter = (e) => {
+    //     e.preventDefault()
+    //     console.log("submitted new member!")
+        
+    //     let newCharNameValue = document.getElementById("newCharName").value
+    //     let newCharImageValue = document.getElementById("newCharImage").value
+
+    //     // if (newCharFirstValue.length == 0 || newCharLastValue.length == 0 || 
+    //     //     newCharJoinedValue.length == 0 || newCharLeftValue.length == 0 || 
+    //     //     newCharImageValue.length == 0) {
+    //     //         alert("Please fill in all fields")
+    //     //         return false
+    //     //     }
+    //     //     return true
+        
+    //     let newChar = {first: memberFirstValue, last: memberLastValue, joined: memberJoinedValue, left: memberLeftValue, image: memberImageValue}
+    //     document.getElementById("form-new-member").hidden = true
+    //     Member.postMember(member)
+    // }
 
     static addLike = (charID) => {
     //    console.log(charID)
