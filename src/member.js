@@ -96,7 +96,7 @@ class Member {
 
         
         static deleteMember = () => {
-    debugger
+ 
             let txt;
             let r = confirm("You sure? This will delete this Player and ALL their characters!!");
             if (r == true) {
