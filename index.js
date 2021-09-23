@@ -11,6 +11,7 @@ addMemberForm.addEventListener("submit", Member.newMember)
 let addMemberButton = document.getElementById("showNewMemberForm")
 addMemberButton.addEventListener("click", () => {
 document.getElementById("form-new-member").hidden = false
+document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
 })
 
 let submitEdits = document.getElementById("form-edit-member")
@@ -24,3 +25,8 @@ document.querySelector("#actor-container").classList.toggle("hidden-member")
 document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
 })
 })
+
+const cancelButt = () => {
+  Member.cancelNewForm()
+  document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
+}

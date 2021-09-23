@@ -54,6 +54,14 @@ class Member {
             let memberJoinedValue = document.getElementById("memberJoined").value
             let memberLeftValue = document.getElementById("memberLeft").value
             let memberImageValue = document.getElementById("memberImage").value
+
+            // if (memberFirstValue.length == 0 || memberLastValue.length == 0 || 
+            //     memberJoinedValue.length == 0 || memberLeftValue.length == 0 || 
+            //     memberImageValue.length == 0) {
+            //         alert("Please fill in all fields")
+            //         return false
+            //     }
+            //     return true
             
             let member = {first: memberFirstValue, last: memberLastValue, joined: memberJoinedValue, left: memberLeftValue, image: memberImageValue}
             document.getElementById("form-new-member").hidden = true
@@ -88,7 +96,7 @@ class Member {
 
         
         static deleteMember = () => {
-    
+    debugger
             let txt;
             let r = confirm("You sure? This will delete this Player and ALL their characters!!");
             if (r == true) {
@@ -101,6 +109,7 @@ class Member {
                 .then(resp => {
                     let actorsContainer = document.getElementById("actor-container")
                     actorsContainer.innerHTML = ""
+                    document.querySelector("#actor-container").classList.toggle("hidden-member")
                     Member.fetchMembers()
                 })
          

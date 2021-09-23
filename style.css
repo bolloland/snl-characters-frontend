@@ -45,7 +45,7 @@
  #charBox {
     border-style: solid;
     border-image: linear-gradient(45deg, rgb(17, 231, 210), rgb(0, 0, 0)) 1;
-    margin-bottom: 0px;
+    margin-bottom: 2px;
 }
 
 #charImage {
