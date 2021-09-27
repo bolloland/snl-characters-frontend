@@ -23,12 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#character-container").classList.toggle("hidden")
     document.querySelector("#actor-container").classList.toggle("hidden-member")
     document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
-    })
+    
+    let charBox = document.getElementById("charBox")
+    charBox.innerHTML = ""  
+  })
 
     let addCharButton = document.querySelector("#addCharacter")
     addCharButton.addEventListener("click", () => {
       console.log("clicky")
-      showCharForm
+      document.querySelector("#form-new-container").classList.toggle("hidden-character-form")
     })
 
 })
