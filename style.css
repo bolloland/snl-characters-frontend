@@ -52,9 +52,9 @@
     border-style: solid;
     width: 300px
 }
-.new-member-button#newMemberFormButton {
+/* .new-member-button#newMemberFormButton {
     display: none
-}
+} */
 
 .hidden-character-form#form-new-character {
     display: none
