@@ -39,24 +39,34 @@ class Character {
     // }
 
     static addLike = (charID) => {
-    //    console.log(charID)
-    let likedChar = Character.all.find(char => char.id == charID)
-    // console.log(likedChar.likes)
-    likedChar.likes += 1
-    // console.log(likedChar.likes)
-    let likeCounter = document.getElementById(charID)
-       fetch(`${charURL}/${charID}`, {
-        method: 'PATCH',
-            headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(likedChar),
-        })
-            .then(resp => resp.json())
-            .then(json => likeCounter.innerHTML = `${likedChar.likes} Likes`)
-    }
+    let likedChar = Character.all.find((char) => char.id == charID);
 
+    likedChar.likes += 1;
 
+    likedChar = {
+      likes: likedChar.likes,
+    };
+
+    let likeCounters = document.querySelectorAll(".like-button");
+    let likeCounter;
+
+    likeCounters.forEach((ele) => {
+      if (parseInt(ele.id) == charID) {
+        likeCounter = ele;
+      }
+    });
+
+    fetch(`${charURL}/${charID}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(likedChar),
+    }).then((resp) => {
+      resp.json()
+      likeCounter.innerHTML = `${likedChar.likes} Likes`
+    })
+  };
     
     renderCharacters = (creator) => {
         console.log(this) 
