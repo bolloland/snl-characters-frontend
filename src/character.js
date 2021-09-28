@@ -48,21 +48,22 @@ class Character {
     };
 
     let likeCounters = document.querySelectorAll(".like-button");
-    let likeCounter;
+    let likeCounter
 
     likeCounters.forEach((ele) => {
       if (parseInt(ele.id) == charID) {
         likeCounter = ele;
       }
     });
-
+    // console.log(likeCounter)
     fetch(`${charURL}/${charID}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(likedChar),
-    }).then((resp) => {
+    })
+    .then((resp) => {
       resp.json()
       likeCounter.innerHTML = `${likedChar.likes} Likes`
     })
