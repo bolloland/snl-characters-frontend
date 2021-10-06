@@ -18,25 +18,24 @@ class Character {
         Character.all.push(this)
     }
     
-    // static newCharacter = (e) => {
-    //     e.preventDefault()
-    //     console.log("submitted new member!")
-        
-    //     let newCharNameValue = document.getElementById("newCharName").value
-    //     let newCharImageValue = document.getElementById("newCharImage").value
+    static postCharacter = (newChar) => {
+      console.log(newChar)
+    }
 
-    //     // if (newCharFirstValue.length == 0 || newCharLastValue.length == 0 || 
-    //     //     newCharJoinedValue.length == 0 || newCharLeftValue.length == 0 || 
-    //     //     newCharImageValue.length == 0) {
-    //     //         alert("Please fill in all fields")
-    //     //         return false
-    //     //     }
-    //     //     return true
+
+    static newCharacter = (e) => {
+      debugger
+        e.preventDefault()
+        console.log("submitted new member!")
         
-    //     let newChar = {first: memberFirstValue, last: memberLastValue, joined: memberJoinedValue, left: memberLeftValue, image: memberImageValue}
-    //     document.getElementById("form-new-member").hidden = true
-    //     Member.postMember(member)
-    // }
+        let newCharNameValue = document.getElementById("newCharName").value
+        let newCharImageValue = document.getElementById("newCharImage").value
+
+  
+        let newChar = {first: memberFirstValue, last: memberLastValue, joined: memberJoinedValue, left: memberLeftValue, image: memberImageValue}
+        document.getElementById("form-new-member").hidden = true
+        Character.postCharacter(newChar)
+    }
 
     static addLike = (charID) => {
     let likedChar = Character.all.find((char) => char.id == charID);

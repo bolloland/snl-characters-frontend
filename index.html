@@ -8,13 +8,14 @@
 </head>
 <body>
     <h2>...it's Saturday Night!</h2>
+    <div><button id="short-button">SHORT</button></div>
     <div>
         <h3 class="title"></h3>
         <img height="100" id="snlLogo" src="https://pbs.twimg.com/profile_images/1159903342182699009/VOkYedxH_400x400.jpg" alt="">
     </div>
 
-    <div id="top5banner">
-    </div>
+    <!-- <div id="top5banner"> to list char with most likes
+    </div> -->
 
     
     <div class="new-member-button" id="newMemberFormButton"><button  id="showNewMemberForm">Add SNL Cast Member</button></div>
@@ -138,9 +139,10 @@
                <button id="patchMemberEdits" onclick="Member.patchMemberEdits()">Send The Edits to Lorne!</button> -->
             </div>
             <br />
+
             <div>
                 <button id="cancelEditButton">
-                    Cancel
+                    Cancel Edit
                 </button>
             </div>
         </form>
@@ -157,51 +159,28 @@
         <div id="returnToMain">
             <button id="gotoMainPage"> Return to Cast Members </button>
             <button id="addCharacter"> Add a Character! </button>
-            <div id="new-character-form-container">
-                
-                <div id="form-new-character" class="hidden-character-form">
-                    <form id="add-Char" class="add-character">
-                    <h3>Add a new Character!</h3>
+            </br>
+            <div id="new-character-form-container" class="hidden-character-form">
+                <form id="add-Char" class="add-character">
+                    <h3>Add A New Character!</h3>
                     <!-- make this a hidden field with a button to reveal -->
-                    <input
-                    type="text"
-                    name="name"
-                    value=""
-                    placeholder="Character's full name..."
-                    class="input-text"
-                    id="newCharName"
-                    />
+                    <input type="text" name="name" value="" placeholder="Character's full name..." class="input-text" id="newCharName" />
                     <br />
-                    <input
-                    type="text"
-                    name="image"
-                    value=""
-                    placeholder="Include a GIF!..."
-                    class="input-text"
-                    id="newCharImage"
-                    />
+                    <input type="text" name="image" value="" placeholder="Include a GIF!..." class="input-text" id="newCharImage" />
                     <br />
-                    <input
-                    type="submit"
-                    name="submitChar"
-                    value="Submit Your Character!"
-                    class="submit"
-                    id="submitNewCharacterButton"
-                    />
+                    <input type="submit" name="submitChar" value="Submit Your Character!" id="newCharSubmitButton" />
                     <br />
-            <div><button id="cancelCharButton" onclick="cancelCharButt()" type="button">
-             Cancel </button></div>
-            
-        </form>
-    </div>
+                </form> 
+                    <div><button id="cancelCharButton" onclick="cancelCharButt()" type="button"> Cancel </button></div>
+                
             </div>
         </div>
-        <div id="charBox">
-        </div>
+        
+
+                <div id="charBox">
+                </div>
     </div>
     
-    <div id="form-new-character">
-    </div>
     
     
     <script src = "src/character.js"></script>

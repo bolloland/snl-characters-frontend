@@ -1,5 +1,5 @@
 // any global variables go here
-// initialization of application   reads and fetches
+// initialization of application reads and fetches
 
 document.addEventListener("DOMContentLoaded", () => {
   
@@ -19,24 +19,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let returnButton = document.getElementById("gotoMainPage")
     returnButton.addEventListener("click", () => {
-    console.log("yo")
+    console.log("returning to Main...")
     document.querySelector("#character-container").classList.toggle("hidden")
     document.querySelector("#actor-container").classList.toggle("hidden-member")
     document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
     
     let charBox = document.getElementById("charBox")
     charBox.innerHTML = ""  
-  })
-
-    let addCharButton = document.querySelector("#addCharacter")
-    addCharButton.addEventListener("click", () => {
-      console.log("clicky")
-      document.querySelector("#form-new-container").classList.toggle("hidden-character-form")
     })
 
+    // let addCharButton = document.querySelector("#addCharacter")
+    // addCharButton.addEventListener("click", () => {
+    //   console.log("clicky")
+    //   document.querySelector("#new-character-form-container").classList.toggle("hidden")
+    // })
+
+
+    
+    
 })
 
+// let shortButton = document.querySelector("#short-button")
+// shortButton.addEventListener("click", () => {
+// fetch 
+// filter - if lastname length < 5 render it
+// })
 
+
+// var myString = "string test";
+// var stringLength = myString.length;
+
+// console.log(stringLength);
 
 const cancelButt = () => {
   Member.cancelNewForm()
