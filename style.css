@@ -67,6 +67,7 @@ body {
     background-color: rgb(50, 135, 204);
     border-image: linear-gradient(45deg, rgb(17, 231, 210), rgb(0, 0, 0)) 1;
     margin-bottom: 2px;
+    /* display: none */
 }
 
 #charImage {
