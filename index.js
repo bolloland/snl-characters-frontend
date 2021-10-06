@@ -28,16 +28,22 @@ document.addEventListener("DOMContentLoaded", () => {
     charBox.innerHTML = ""  
     })
 
-    // let addCharButton = document.querySelector("#addCharacter")
-    // addCharButton.addEventListener("click", () => {
-    //   console.log("clicky")
-    //   document.querySelector("#new-character-form-container").classList.toggle("hidden")
-    // })
-
-
     
     
 })
+
+
+let addCharToggleButton = document.querySelector("#addCharacter")
+    addCharToggleButton.addEventListener("click", console.log("moo"))
+
+  let charSubmitButton = document.querySelector("#newCharSubmitButton")
+  charSubmitButton.addEventListener("submit", (e) => {
+    e.preventDefault()
+    console.log("please god")
+  })
+
+
+
 
 // let shortButton = document.querySelector("#short-button")
 // shortButton.addEventListener("click", () => {
