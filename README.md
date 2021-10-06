@@ -3,6 +3,9 @@
 At the moment, we're able to create new Members, look at their characters and give Likes based on our love for them.
 Future goals for this app include: a ranking system, detailed info about cast members and characters alike reviews of the best sketches with that character, and a constantly updating real-time list of the Top 5 characters on SNL. 
 
+
+# Backend Repo: https://github.com/bolloland/snl-characters-api
+
 Models:
 
 SNL Member:
