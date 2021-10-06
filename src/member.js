@@ -55,13 +55,6 @@ class Member {
             let memberLeftValue = document.getElementById("memberLeft").value
             let memberImageValue = document.getElementById("memberImage").value
 
-            // if (memberFirstValue.length == 0 || memberLastValue.length == 0 || 
-            //     memberJoinedValue.length == 0 || memberLeftValue.length == 0 || 
-            //     memberImageValue.length == 0) {
-            //         alert("Please fill in all fields")
-            //         return false
-            //     }
-            //     return true
             
             let member = {first: memberFirstValue, last: memberLastValue, joined: memberJoinedValue, left: memberLeftValue, image: memberImageValue}
             document.getElementById("form-new-member").hidden = true
