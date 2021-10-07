@@ -32,12 +32,14 @@ class Member {
             
             let clearMemberForm = document.getElementById("addMember")
             clearMemberForm.reset()
-             
-          })
-          .catch(error => {
-              alert("Warning! Danger, Will Robinson!");
-              document.body.innerHTML = error.message;
-            })
+            
+        })
+        .catch(error => {
+            alert("Warning! Danger, Will Robinson!");
+            document.body.innerHTML = error.message;
+        })
+        console.log(mem)
+        debugger
         }
 
         static cancelNewForm = () => {
@@ -110,6 +112,8 @@ class Member {
             txt = "You pressed Cancel!";
             }
         }
+
+        
         
         renderMember = () => {
         // console.log(this) // <an instance
@@ -118,11 +122,13 @@ class Member {
         actorsContainer.innerHTML += `<div class="memberContainer">
             <img class="memberImage" src=${this.image} /><div>
             <div>${this.first} ${this.last}</div>
-            <button id=${this.id} class="show-character" onclick="Character.fetchCharacters(${this.id})" type="button">characters</button>
-            <button id=${this.id} class="edit-member" onclick="Member.editMember()" type="button">edit</button>
+            <button id=${this.id} class="show-character" onclick="Character.fetchCharacters(${this.id})" type="button">View Characters</button>
+            <button id=${this.id} class="edit-member" onclick="Member.editMember()" type="button">edit</button></br>
+            <button id=${this.id} class="add-char" onclick="Character.newCharacter(${this.id})" type="button">Add a Character</button>
+            
+            <button id=${this.id} onclick="Character.showForm(${this.id})" type="button">Show Add Form</button>
             <button id=${this.id} onclick="Member.deleteMember()" type="button" style="color: red">&#10060;</button>
             </div></div>`
-
     }
     // <button id=${this.id} class="show-character" onclick="Character.showCharacters()" type="button">characters</button>
 

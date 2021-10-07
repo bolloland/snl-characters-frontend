@@ -4,6 +4,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   
     Member.fetchMembers()
+
     document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
     let addMemberForm = document.getElementById("addMember")
     addMemberForm.addEventListener("submit", Member.newMember)
@@ -26,6 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let charBox = document.getElementById("charBox")
     charBox.innerHTML = ""  
+
+    let addCharacterForm = document.getElementById("add-Char")
+    addCharacterForm.addEventListener("submit", Character.)
+
     })
 
     
@@ -36,11 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
 let addCharToggleButton = document.querySelector("#addCharacter")
     addCharToggleButton.addEventListener("click", console.log("moo"))
 
-  let charSubmitButton = document.querySelector("#newCharSubmitButton")
-  charSubmitButton.addEventListener("click", (e) => {
-    e.preventDefault()
-    console.log("please god")
-  })
+// let charSubmitButton = document.querySelector("#newCharSubmitButton")
+// charSubmitButton.addEventListener("click", (e) => {
+//   e.preventDefault()
+//   console.log("please god")
+// })
 
 
 

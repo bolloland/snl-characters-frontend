@@ -19,36 +19,66 @@ class Character {
     }
     
     static postCharacter = (newChar) => {
+      preventDefault()
       console.log(newChar)
     }
 
+// ADD NEW CHARACTERS //
+// let newCharForm = document.getElementById("#add-Char")
 
-    static newCharacter = (e) => {
-      debugger
-        e.preventDefault()
-        console.log("submitted new member!")
-        
-        let newCharNameValue = document.getElementById("newCharName").value
-        let newCharImageValue = document.getElementById("newCharImage").value
-
-  
-        let newChar = {first: memberFirstValue, last: memberLastValue, joined: memberJoinedValue, left: memberLeftValue, image: memberImageValue}
-        document.getElementById("form-new-member").hidden = true
-        Character.postCharacter(newChar)
+      
+    static showForm = (e) => {
+      console.log(e)    
+      let owner = Member.all.find((owner) => owner.id == e) 
+      console.log(owner)
+      console.log(`owner.id is ${owner.id}` )
+      document.querySelector("#actor-container").classList.toggle("hidden-member") //hide actor container
+      let newCharFormCont = document.querySelector("#new-char-form-cont").classList.toggle("hidden-char-form")
     }
 
+    
+
+    static newCharacter = (e) => {
+      console.log(e)
+  
+      let owner = Member.all.find((owner) => owner.id == e) 
+      console.log(owner)
+      console.log(`owner.id is ${owner.id}` )
+      document.querySelector("#actor-container").classList.toggle("hidden-member") //hide actor container
+      let newCharFormCont = document.querySelector("#new-char-form-cont").classList.toggle("hidden-char-form")
+      
+      // let newCharSubmitButton = document.querySelector("#newCharSubmitButton")
+      newCharSubmitButton.addEventListener("click", console.log("good lord willing"))
+      // let newCharForm = document.getElementById("#add-Char")
+      // newCharForm.addEventListener("submit", console.log("hey man"))
+
+
+      // let newCharNameValue = document.getElementById("newCharName").value
+      // let newCharImageValue = document.getElementById("newCharImage").value
+
+      // let newChar = {name: newCharNameValue, image: newCharNameImage, member_id: owner.id}
+      // debugger
+       
+        // document.getElementById("new-char-form-cont").hidden = true
+      //   newCharForm.addEventListener("submit", () => {
+      //     console.log("submitting character info to Post")
+      // let newCharNameValue = document.getElementById("newCharName").value
+      // let newCharImageValue = document.getElementById("newCharImage").value
+      // let newChar = {name: newCharNameValue, image: newCharNameImage, member_id: owner.id}
+      // Character.postCharacter(newChar)
+      //   })
+    }
+
+// LIKE BUTTON //
     static addLike = (charID) => {
     let likedChar = Character.all.find((char) => char.id == charID);
-
     likedChar.likes += 1;
-
     likedChar = {
       likes: likedChar.likes,
     };
 
     let likeCounters = document.querySelectorAll(".like-button");
     let likeCounter
-
     likeCounters.forEach((ele) => {
       if (parseInt(ele.id) == charID) {
         likeCounter = ele;

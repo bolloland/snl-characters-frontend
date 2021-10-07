@@ -55,6 +55,10 @@ body {
      display: none
  }
 
+ .hidden-char-form#new-char-form-cont {
+    display: none
+}
+
  #charBox {
     border-style: solid;
     background-color: rgb(255, 255, 255);
