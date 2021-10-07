@@ -14,8 +14,6 @@
         <img height="100" id="snlLogo" src="https://pbs.twimg.com/profile_images/1159903342182699009/VOkYedxH_400x400.jpg" alt="">
     </div>
 
-    <!-- <div id="top5banner"> to list char with most likes
-    </div> -->
 
     
     <div class="new-member-button" id="newMemberFormButton"><button  id="showNewMemberForm">Add SNL Cast Member</button></div>
@@ -155,31 +153,31 @@
 
 
     <!-- CHARACTER BLOCK -->
+    <!-- New Character Form Container -->
+    <div id="new-char-form-cont" class="hidden-char-form">
+        <h3>Add A New Character!</h3> 
+        <form id="add-Char">
+            <input type="text" name="name" value="" placeholder="Character's full name..." class="input-text" id="newCharName" />
+            <br />
+            <input type="text" name="image" value="" placeholder="Include a GIF!..." class="input-text" id="newCharImage" />
+            <br />
+            <input type="submit" name="submitChar" value="Submit Your Character!" id="newCharSubmitButton" />
+            <br />
+        </form> 
+            <div><button id="cancelCharButton" onclick="cancelCharButt()" type="button"> Cancel </button></div>
+    </div>
+    <!-- //FINISHED CHARACTER CONTAINER -->
     <div class="hidden" id="character-container">
         <div id="returnToMain">
             <button id="gotoMainPage"> Return to Cast Members </button>
             <button id="addCharacter"> Add a Character! </button>
             </br>
-            
+        </div>
+<!-- Individual Characters Here -->
+        <div id="charBox"> 
         </div>
         
 
-                <div id="charBox">
-                    <!-- <div id="new-character-form-container" class="character-form">
-                        <form id="add-Char" class="add-character">
-                            <h3>Add A New Character!</h3>
-                           
-                            <input type="text" name="name" value="" placeholder="Character's full name..." class="input-text" id="newCharName" />
-                            <br />
-                            <input type="text" name="image" value="" placeholder="Include a GIF!..." class="input-text" id="newCharImage" />
-                            <br />
-                            <input type="submit" name="submitChar" value="Submit Your Character!" id="newCharSubmitButton" />
-                            <br />
-                        </form> 
-                            <div><button id="cancelCharButton" onclick="cancelCharButt()" type="button"> Cancel </button></div>
-                        
-                    </div> -->
-                </div>
     </div>
     
     
