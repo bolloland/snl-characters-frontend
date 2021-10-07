@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     charBox.innerHTML = ""  
 
     let addCharacterForm = document.getElementById("add-Char")
-    addCharacterForm.addEventListener("submit", Character.)
+    addCharacterForm.addEventListener("submit", console.log("addChar submit?"))
 
     })
 
