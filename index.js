@@ -37,7 +37,7 @@ let addCharToggleButton = document.querySelector("#addCharacter")
     addCharToggleButton.addEventListener("click", console.log("moo"))
 
   let charSubmitButton = document.querySelector("#newCharSubmitButton")
-  charSubmitButton.addEventListener("submit", (e) => {
+  charSubmitButton.addEventListener("click", (e) => {
     e.preventDefault()
     console.log("please god")
   })
