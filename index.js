@@ -18,20 +18,23 @@ document.addEventListener("DOMContentLoaded", () => {
     let submitEdits = document.getElementById("form-edit-member")
     submitEdits.addEventListener("submit", Member.patchMemberEdits)
 
-    let returnButton = document.getElementById("gotoMainPage")
+    // let addCharButton = document.querySelector("#addCharacter")
+    //   addCharButton.addEventListener("click", () => {
+    //     console.log("show that char button!")
+    //     Character.newCharacter()
+       
+    //   })
+
+
+    let returnButton = document.querySelector("#gotoMainPage")
     returnButton.addEventListener("click", () => {
     console.log("returning to Main...")
     document.querySelector("#character-container").classList.toggle("hidden")
     document.querySelector("#actor-container").classList.toggle("hidden-member")
     document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
-    
+
     let charBox = document.getElementById("charBox")
     charBox.innerHTML = ""  
-
-    let addCharacterForm = document.getElementById("add-Char")
-    addCharacterForm.addEventListener("submit", (e) => {
-      e.preventDefault()
-    })
 
     })
 
@@ -39,31 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
 })
 
-
-// let addCharToggleButton = document.querySelector("#addCharacter")
-//     addCharToggleButton.addEventListener("click", console.log("moo"))
-
-// let charSubmitButton = document.querySelector("#newCharSubmitButton")
-// charSubmitButton.addEventListener("submit", (e) => {
-//   e.preventDefault()
-//   console.log("please god")
-//   console.log(e.target)
-// })
-
-
-
-
-// let shortButton = document.querySelector("#short-button")
-// shortButton.addEventListener("click", () => {
-// fetch 
-// filter - if lastname length < 5 render it
-// })
-
-
-// var myString = "string test";
-// var stringLength = myString.length;
-
-// console.log(stringLength);
 
 const cancelButt = () => {
   Member.cancelNewForm()
