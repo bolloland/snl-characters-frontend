@@ -1,0 +1,1 @@
+{/* <button id=${this.id} class="edit-member" onclick="Member.editMember()" type="button">edit</button></br> */}
