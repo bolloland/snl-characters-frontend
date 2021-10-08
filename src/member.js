@@ -2,6 +2,7 @@
 const memberURL = "http://localhost:3000/members"
 
 class Member {
+    // put short button in here
     
     static all = []
     constructor(id, first, last, joined, left, image, characters) {
@@ -123,10 +124,9 @@ class Member {
             <img class="memberImage" src=${this.image} /><div>
             <div>${this.first} ${this.last}</div>
             <button id=${this.id} class="show-character" onclick="Character.fetchCharacters(${this.id})" type="button">View Characters</button>
-            <button id=${this.id} class="edit-member" onclick="Member.editMember()" type="button">edit</button></br>
+            
             <button id=${this.id} class="add-char" onclick="Character.newCharacter(${this.id})" type="button">Add a Character</button>
             
-            <button id=${this.id} onclick="Character.showForm(${this.id})" type="button">Show Add Form</button>
             <button id=${this.id} onclick="Member.deleteMember()" type="button" style="color: red">&#10060;</button>
             </div></div>`
     }
