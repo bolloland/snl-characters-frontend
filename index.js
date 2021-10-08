@@ -29,7 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
     charBox.innerHTML = ""  
 
     let addCharacterForm = document.getElementById("add-Char")
-    addCharacterForm.addEventListener("submit", console.log("addChar submit?"))
+    addCharacterForm.addEventListener("submit", (e) => {
+      e.preventDefault()
+    })
 
     })
 
@@ -38,13 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
-let addCharToggleButton = document.querySelector("#addCharacter")
-    addCharToggleButton.addEventListener("click", console.log("moo"))
+// let addCharToggleButton = document.querySelector("#addCharacter")
+//     addCharToggleButton.addEventListener("click", console.log("moo"))
 
 // let charSubmitButton = document.querySelector("#newCharSubmitButton")
-// charSubmitButton.addEventListener("click", (e) => {
+// charSubmitButton.addEventListener("submit", (e) => {
 //   e.preventDefault()
 //   console.log("please god")
+//   console.log(e.target)
 // })
 
 
