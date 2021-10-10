@@ -141,13 +141,30 @@ class Member {
         json.forEach(player => {
         let mem = new Member(player.id, player.first, player.last, player.joined, player.left, player.image, player.characters)
         console.log(mem)
+        
         mem.renderMember()
         //because we're in Class, variable has the method called on it. 
         //If we were in index.js, renderMember(mem) would be appropo
         })
       })
     }
-    }
+
+    static short = () => {
+        let actorsContainer = document.getElementById("actor-container")
+        actorsContainer.innerHTML = ""
+     fetch(memberURL)
+    .then(resp => resp.json())
+    .then(json => {
+        json.forEach(player => {
+        let mem = new Member(player.id, player.first, player.last, player.joined, player.left, player.image, player.characters)
+        console.log(mem)
+            if (mem.last.length <= 5) {
+                mem.renderMember()
+            }
+    })
+    })}
+
+}   
 
 
 

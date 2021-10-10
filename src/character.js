@@ -57,8 +57,11 @@ class Character {
 
       //hide actor container
       let newCharFormCont = document.querySelector("#new-char-form-cont").classList.toggle("hidden-char-form") //show new Char form
-      debugger
-      
+      let div = document.createElement("div")
+      let h3 = document.createElement("h3")
+      h3.innerHTML = `Add A New Character for ${owner.first} ${owner.last}`
+      div.appendChild(h3)
+      // newCharFormCont.appendChild(div)
       let newCharSubmitButton = document.getElementById("add-Char")
       newCharSubmitButton.addEventListener("submit", (e) => {
         e.preventDefault()

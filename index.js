@@ -18,12 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let submitEdits = document.getElementById("form-edit-member")
     submitEdits.addEventListener("submit", Member.patchMemberEdits)
 
-    // let addCharButton = document.querySelector("#addCharacter")
-    //   addCharButton.addEventListener("click", () => {
-    //     console.log("show that char button!")
-    //     Character.newCharacter()
-       
-    //   })
+    const shortenButton = document.querySelector("#show-short")
+    shortenButton.addEventListener("click", Member.short)
 
 
     let returnButton = document.querySelector("#gotoMainPage")
