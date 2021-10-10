@@ -39,7 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
-const cancelButt = () => {
-  Member.cancelNewForm()
-  document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
+const cancelCharButt = () => {
+  let actorsContainer = document.getElementById("actor-container")
+        actorsContainer.innerHTML = ""
+  Member.fetchMembers()
+  document.querySelector("#new-char-form-cont").classList.toggle("hidden-char-form") 
 }
