@@ -149,23 +149,23 @@ class Member {
       })
     }
 
+    
     static short = () => {
-        let actorsContainer = document.getElementById("actor-container")
-        actorsContainer.innerHTML = ""
-     fetch(memberURL)
-    .then(resp => resp.json())
-    .then(json => {
-        json.forEach(player => {
-        let mem = new Member(player.id, player.first, player.last, player.joined, player.left, player.image, player.characters)
-        console.log(mem)
-            if (mem.last.length <= 5) {
-                mem.renderMember()
-            }
-    })
-    })}
+            let actorsContainer = document.getElementById("actor-container")
+            actorsContainer.innerHTML = ""
+         fetch(memberURL)
+        .then(resp => resp.json())
+        .then(json => {
+            json.forEach(player => {
+            let mem = new Member(player.id, player.first, player.last, player.joined, player.left, player.image, player.characters)
+            console.log(mem)
+                if (mem.last.length <= 5) {
+                    mem.renderMember()
+                }
+        })
+        })}
 
 }   
-
 
 
 
