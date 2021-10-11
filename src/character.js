@@ -23,6 +23,7 @@ class Character {
      
             //fetch method to post new character info
       console.log(newChar)
+      let creator = Member.all.find(mem => mem.id == newChar.member_id)
       return fetch(charURL, {
             method: "POST",
             headers: {
@@ -34,7 +35,8 @@ class Character {
           .then(resp => resp.json())
           .then(data => {
             let newChara = new Character(data.id, data.name, data.debut, data.review, data.image, data.script_one, data.script_two, data.script_three, data.likes, data.member_id)
-            newChara.renderCharacters()
+            // document.querySelector("#character-container").classList.toggle("hidden")
+            newChara.renderCharacters(creator)
             
           })
           
@@ -49,19 +51,12 @@ class Character {
       // console.log(owner)
       console.log(`owner.id is ${owner.id}` )
       // let membersCont = document.querySelector("#actor-container")
-      // let toggleMembers = document.querySelector("#actor-container").classList.toggle("hidden-member")
       document.querySelector("#actor-container").classList.toggle("hidden-member")
-      // if (membersCont.getElementsByClassName.display == false) {
-      //   toggleMembers
-      // }
+      // document.querySelector("#character-container").classList.toggle("hidden")
 
       //hide actor container
       let newCharFormCont = document.querySelector("#new-char-form-cont").classList.toggle("hidden-char-form") //show new Char form
-      let div = document.createElement("div")
-      let h3 = document.createElement("h3")
-      h3.innerHTML = `Add A New Character for ${owner.first} ${owner.last}`
-      div.appendChild(h3)
-      // newCharFormCont.appendChild(div)
+      
       let newCharSubmitButton = document.getElementById("add-Char")
       newCharSubmitButton.addEventListener("submit", (e) => {
         e.preventDefault()
@@ -79,9 +74,6 @@ class Character {
         this.fetchCharacters(ownerId)
       })
     }
-
-    
-
 
 
 // LIKE BUTTON //
@@ -118,86 +110,52 @@ class Character {
     console.log(this) 
     console.log(creator)
     let charID = parseInt(creator.id)
-
     
+    // let charBox = document.getElementById("charBox")   
+    charBox.innerHTML += `<div class="char-image">
+    <div>
+    <h2>
+    ${this.name}
+    <button id=${this.id} class="like-button" onclick="Character.addLike(${this.id})" type="button"> ${this.likes} Likes </button>
+    </h2>
+    <img class="charImage" src=${this.image} /><div>
+    </div>`
+  }
+  
+  ////////  FETCH CHARACTERS    //////
+  static fetchCharacters = (e) => {
     
-        // let charBox = document.getElementById("charBox")   
-        charBox.innerHTML += `<div class="char-image">
-        <div>
-        <h2>
-        ${this.name}
-        <button id=${this.id} class="like-button" onclick="Character.addLike(${this.id})" type="button"> ${this.likes} Likes </button>
-        </h2>
-        <img class="charImage" src=${this.image} /><div>
-        </div>`
-      }
-    
-      ////////  FETCH CHARACTERS    //////
-    static fetchCharacters = (e) => {
-     
+    // debugger
         document.querySelector("#actor-container").classList.toggle("hidden-member")
-        document.querySelector("#character-container").classList.toggle("hidden")
+        document.querySelector("#character-container").classList != "hidden"
         document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
         let creator = Member.all.find(mem => mem.id == e)
-        // getMemberName(creator)
+        console.log(creator)
         //
         let charID = parseInt(e)
-                  ////trying to push member_id into newChar form
-                    let addCharButton = document.querySelector("#addCharacter")
-                      addCharButton.addEventListener("click", () => {
-                      console.log("show that char button!")
-                      document.querySelector("#actor-container").classList.toggle("hidden-member") == true
-                      
-                      let submitButton = document.querySelector("#newCharSubmitButton")
-                      submitButton.dataset.id=`${charID}`
-                      console.log(submitButton.dataset.id)
-                      // Character.newCharacter(charID)
-                  })
-
-        // Character.renderButtons(charID)
-        
-        // console.log(charID)
+        charBox.innerHTML = ""
+        console.log(charID)
         fetch(`${memberURL}/${charID}`)
         .then(resp => resp.json())
         .then(json => {
             let chars = json["characters"]
             chars.forEach(c => {
               let char = new Character(c.id, c.name, c.debut, c.review, c.image, c.script_one, c.script_two, c.script_three, c.likes, c.member_id)
-                // console.log(char)
-                char.renderCharacters(creator)
+                console.log(char)
+              char.renderCharacters(creator)
             })
         })
        
         }
     
+        static returnMain = () => {
+          // e.preventDefault()
+          console.log("returning to Main...")
+          document.querySelector("#character-container").classList.toggle("hidden")
+          document.querySelector("#actor-container").classList.toggle("hidden-member")
+          document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
+        }
 
 
-
-  // static renderButtons = (id) => {
-  //   console.log(id)
-  //   let membid = id
-  //      ///create buttons
-  //      const div = document.createElement("div")
-  //       let cc = document.getElementById("character-container")
-  //       let returnToMain = document.createElement("div")
-    
-  //       div.id = "returnToMain"
-  //       div.innerHTML = `<button id="gotoMainPage"> Return to Cast Members </button>
-  //           <button id="addCharacter"> Add a Character! </button>
-  //           </br>`
-  //       cc.appendChild(div)
-    
-  //       let returnButton = document.getElementById("gotoMainPage")
-  //       returnButton.addEventListener("click", () => {
-  //       console.log("returning to Main...")
-  //       document.querySelector("#character-container").classList.toggle("hidden")
-  //       document.querySelector("#actor-container").classList.toggle("hidden-member")
-  //       document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
-        
-  //       let charBox = document.getElementById("charBox")
-  //       charBox.innerHTML = ""  
-  //       })
-  //       this.fetchCharacters(membid)
-  //   }
 
   }
