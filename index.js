@@ -3,7 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelector("#character-container").classList.toggle("hidden")
-    Member.fetchMembers()
+    Member.fetchMembers() //show "home" page
 
     document.querySelector("#newMemberFormButton").classList.toggle("new-member-button")
     let addMemberForm = document.getElementById("addMember")
@@ -18,16 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let submitEdits = document.getElementById("form-edit-member")
     submitEdits.addEventListener("submit", Member.patchMemberEdits)
 
-    // let addCharButton = document.querySelector("#addCharacter")
-    //   addCharButton.addEventListener("click", () => {
-    //     console.log("show that char button!")
-    //     document.querySelector("#new-char-form-cont").classList.toggle("hidden-char-form") = false
-    //     document.querySelector("#actor-container").classList.toggle("hidden-member") = true
-    //     document.querySelector("#character-container").classList.toggle("hidden")
-    //   })
-
-
-    })
+})
 
     
     const cancelButt = () => {

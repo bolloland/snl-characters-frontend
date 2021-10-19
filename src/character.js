@@ -107,8 +107,8 @@ class Character {
   
     ///// RENDER CHARACTERS //////////////
   renderCharacters = (creator) => {
-    console.log(this) 
-    console.log(creator)
+    console.log(this) // this is the Character instance
+    console.log(creator) // creater is the Member
     let charID = parseInt(creator.id)
     
     // let charBox = document.getElementById("charBox")   
